@@ -1,0 +1,149 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Pairs Combined</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <style>
+     body {font-family: Arial, Helvetica, sans-serif;}
+     * {box-sizing: border-box;}
+
+     .output .form-group {  
+       display: flex;
+       flex-flow: row wrap;
+       align-items: center;
+     }
+
+     .form-inline .slot_subclass {  
+       display: flex;
+       flex-flow: row wrap;
+       align-items: center;
+     }
+
+     .form-inline .slot1_subclass {  
+       display: flex;
+       flex-flow: row wrap;
+       align-items: center;
+     }
+
+     .form-inline label {
+       margin: 5px 10px 5px 0;
+     }
+
+     .form-inline input {
+       vertical-align: middle;
+       margin: 5px 10px 5px 0;
+       padding: 10px;
+       background-color: #fff;
+       border: 1px solid #ddd;
+     }
+
+     button {
+       padding: 10px 20px;
+       background-color: dodgerblue;
+       border: 1px solid #ddd;
+       color: white;
+       cursor: pointer;
+     }
+
+     button[class="delete"] {
+       padding: 10px 20px;
+       background-color: rgb(255, 30, 30);
+       border: 1px solid #ddd;
+       color: white;
+       cursor: pointer;
+     }
+
+     button[class="match"] {
+       padding: 10px 20px;
+       background-color: rgb(23, 224, 5);
+       border: 1px solid #ddd;
+       color: white;
+       cursor: pointer;
+     }
+
+     button:hover {
+       background-color: royalblue;
+     }
+
+     button[class="delete"]:hover {
+       background-color: rgb(189, 5, 5);
+     }
+
+     button[class="match"]:hover {
+       background-color: rgb(12, 155, 7);
+     }
+
+     @media (max-width: 800px) {
+      .form-inline input {
+      margin: 10px 0;
+     }
+  
+     .form-inline {
+      flex-direction: column;
+      align-items: stretch;
+      }
+     }
+     #footer {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background: rgb(125, 173, 13);
+        text-align: center;
+      }
+    </style>
+</head>
+<body>
+     <h2>Two Pair Combined Object</h2>
+     <p>This program that takes two objects and returns a new object which combines all the input objects. All input object properties will have only numeric values. </p>
+     <p>Objects are combined together so that the values of matching keys are added together.</p>
+     <p>For use, please click button <strong>"Add more key and value"</strong> to add value to each object and then click button <strong>"match button"</strong> for match it.</p>
+     <br>
+     <br>
+     <label for="objstate">Object A:</label>
+     <form class="form-inline" id="objecta">
+      <div class="slot_subclass" id="row'+count+'"><div class="form-group"><label for="keystate">Key:</label><input type="text" class="form-control slot" name="slot_name" id="key'+count+'"></div><div class="form-group"><label for="valuestate">Value:</label><input type="number" class="form-control slot" name="slot_type" id="value'+count+'"></div></div>
+     </form>
+     <button onclick="add_input_obja()">Add More Key and Value</button>
+     <button class="delete" onclick="remove_field_obja()">-</button>
+     <br>
+     <br>
+     <br>
+     <label for="objstate">Object B:</label>
+     <form class="form-inline" id="objectb">
+      <div class="slot1_subclass" id="row'+count+'"><div class="form-group"><label for="keystate">Key:</label><input type="text" class="form-control slot1" name="slot_name" id="key'+count+'"></div><div class="form-group"><label for="valuestate">Value:</label><input type="number" class="form-control slot1" name="slot_type" id="value'+count+'"></div></div>
+     </form>
+     <button onclick="add_input_objb()">Add More Key and Value</button>
+     <button class="delete" onclick="remove_field_objb()">-</button>
+     <br>
+     <br>
+     <button class="match">Match Button</button>
+     <br>
+     <br>     
+     <div class="output">
+      <div class="form-group">
+        <label for="A">Object A:</label>
+        <label id="outputobja"></label>
+      </div>
+      <br>
+      <br>
+      <div class="form-group">
+        <label for="B">Object B:</label>
+        <label id="outputobjb"></label>
+      </div>
+      <br>
+      <br>
+      <div class="form-group">
+        <label for="Comb">Combined Object  :</label>
+        <label id="outputobjfinal"></label>
+      </div>
+     </div>
+     <div id="footer">
+       &copy; Created by Fariz Maulana
+     </div>
+    </body>
+</html>
+
